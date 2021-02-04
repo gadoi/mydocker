@@ -1,0 +1,70 @@
+1.Pulling a docker image.
+
+
+
+1.Building an image
+#Syntax: docker build -t <image-name> <location of dockerfile>
+docker build -r my-nginx
+
+2.List all the images
+#Syntax: docker images
+-----
+docker images
+
+3. Running a container from the image
+#Syntax: docker run -itd --name <container-name> -p <host-port>:<port in container> image-name:tag
+#note in the above syntax
+# -d: represents (detached mode), note that if you dont run this in detached mode, the life of the container will be the life of the terminal in which you are executing it.
+# -p : represents the host-pot to container-port mapping, if you substiture it with -P you will get a random port a allocated by docker
+# --name : represents the name of the container
+----------
+docker run -itd --name my-nginx-container-1 -p 3333:80 my-nginx:latest
+docker run -itd --name my-nginx-container-2 -p 4444:80 my-nginx:latest
+
+4. View all the containers
+#Show all the containers which ar Running
+docker ps
+#show all the containers stopped and Running
+docker ps -a
+
+5. Logging into the container
+#Note: The container must be started before we can do this/
+docker exec -it <container-id> /bin/bash
+
+6. Logging into Dockerhub account on the terminal
+---------
+docker login
+docker tag <currentimage>:<tag> <repository-name>/<image-name>:<tag>
+docker push <repository-name>/<image-name>:<tag>
+docker commit <container-id> <repository-name>/<image-name>:<tag>
+
+docker pull <repository-name>/<image-name>:<tag>
+
+7. Stop vs Remove all the containers and images
+#Stop container
+# Syntax: docker stop [OPTIONS] CONTAINER [CONTAINER...]
+docker stop <names-container>
+---------
+docker stop my-nginx
+
+#Note: To remove an image the corresponding container bult from that image will need to be removed
+
+#Remove a specific container
+docker rm <container-id>
+
+#Remove all containers
+docker rm $(docker ps -a -q)
+
+# Remove image (note: no containers for this image should be running)
+docker rmi <image-id>
+
+#Remove all images
+docker rmi $(docker images -q)
+
+
+Install software
+apt install net-tools
+apt-get install iputils-ping
+apt install iproute2
+apt-get install procps
+apt-get install systemd
