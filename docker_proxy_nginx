@@ -2,4 +2,13 @@ https://www.docker.com/blog/how-to-use-the-official-nginx-docker-image/
 https://hackernoon.com/how-to-nginx-reverse-proxy-with-docker-compose-ul7b3y40
 https://www.domysee.com/blogposts/reverse-proxy-nginx-docker-compose
 https://mikolaj-kaminski.com/nginx-as-reverse-proxy-with-docker/
+https://github.com/nginx-proxy/acme-companion
 
+https://www.digitalocean.com/community/tutorials/how-to-secure-a-containerized-node-js-application-with-nginx-let-s-encrypt-and-docker-compose
+https://hub.docker.com/r/jrcs/letsencrypt-nginx-proxy-companion/ <<-run
+
+https://dev.to/adamkdean/automatic-ssl-with-let-s-encrypt-nginx-4nfk
+
+https://nginxproxymanager.com/guide/#quick-setup
+
+https://github.com/linuxserver/docker-swag
